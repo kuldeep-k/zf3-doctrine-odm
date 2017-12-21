@@ -1,0 +1,28 @@
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'Master > Categories';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('category', ['action' => 'add']) ?>">Add new category</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($categories as $category) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($category->getCode()) ?></td>
+        <td><?= $this->escapeHtml($category->getName()) ?></td>
+        <td>
+            <a href="<?= $this->url('category', ['action' => 'edit', 'id' => $category->getId()]) ?>">Edit</a>
+            <a href="<?= $this->url('category', ['action' => 'delete', 'id' => $category->getId()]) ?>">Delete</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>

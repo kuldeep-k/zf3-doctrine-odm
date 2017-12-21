@@ -8,7 +8,8 @@ config/autoload/*.local.php
 # Binary gettext files
 *.mo
 
-# Data
+# Data\
+data/logs/
 data/logs/
 data/cache/
 data/sessions/
@@ -18,8 +19,19 @@ temp/
 #Doctrine 2
 data/DoctrineORMModule/Proxy/
 data/DoctrineORMModule/cache/
-
+data/DoctrineMongoODMModule
 
 # Legacy ZF1
 demos/
 extras/documentation
+
+CONDUCT.md
+CONTRIBUTING.md
+Dockerfile
+LICENSE.md
+TODO.md
+Vagrantfile
+composer.lock
+docker-compose.yml
+phpcs.xml
+phpunit.xml.dist

@@ -1,0 +1,28 @@
+<?php
+// module/Album/view/album/album/index.phtml:
+
+$title = 'Master > Attributes';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('attribute', ['action' => 'add']) ?>">Add new attribute</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Code</th>
+    <th>Name</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($attributes as $attribute) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($attribute->getCode()) ?></td>
+        <td><?= $this->escapeHtml($attribute->getName()) ?></td>
+        <td>
+            <a href="<?= $this->url('attribute', ['action' => 'edit', 'id' => $attribute->getId()]) ?>">Edit</a>
+            <a href="<?= $this->url('attribute', ['action' => 'delete', 'id' => $attribute->getId()]) ?>">Delete</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
